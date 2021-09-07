@@ -1,4 +1,8 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+# Documentation
+>This is a Documentation for the US Bikeshare Project of the Udacity **Programming for Data Science with Python** Nanodegree course.
+
+![image](https://journalistsresource.org/wp-content/uploads/2015/05/Bikeshare-station-.jpg)
+
 
 ### Date created
 Include the date you created this project and README file.
@@ -14,4 +18,3 @@ Include the files used
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
