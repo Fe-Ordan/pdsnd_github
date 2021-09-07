@@ -35,7 +35,6 @@ def get_filters():
     while True:
         print('-'*100)
         response_list= ["Month", "Day", "Both","No filter"]
-        #print("if you wish to filter by month, write 'all' if you don't want to filter by any month")
         print("\n" + tabulate({"Prompt":["How would you like to filter data by?"],"Possible responses":response_list},headers="keys", tablefmt="presto"))
 
         filter_type = str(input("\nEnter response: ")).strip().lower()
@@ -44,7 +43,6 @@ def get_filters():
     if filter_type == "month" or filter_type == "both":
         while True:
             print('-'*100)
-            #print("if you wish to filter by month, write 'all' if you don't want to filter by any month")
 
             month = promptUser("Which month would you like to filter data with?",map(lambda str: str.title(),month_list))
             if (month in month_list) or (month == "all"):
@@ -56,7 +54,6 @@ def get_filters():
 
 
             print('-'*100)
-            #print("Which day you want to filter data with?")
             day = promptUser("Which day would you like to filter data with?",map(lambda str: str.title(),day_list))
             if day in day_list:
                 break
@@ -98,7 +95,6 @@ def filter_data(df,month, day,filter_type):
     if filter_type.lower() == "both" or filter_type.lower() == "day":
         df = df[df['day_of_the_week'] == day.title()]
 
-    #df.to_csv('bikesharefiltered.csv')
     return df
 def Convert_time(trip_duration):
 
@@ -314,7 +310,6 @@ def main():
         except KeyError as e:
             print("Hmm, There seem to be an error somewhere \n")
             print("\n Try double check with:  ", e)
-            #print(e.message())
             print("\nThe program will stop now\n")
             break
         except Exception as excp:
