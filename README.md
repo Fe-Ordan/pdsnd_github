@@ -15,9 +15,13 @@ In this project, you will explore data related to bike share systems for three m
 
 The project contains a Python program that allows the user to explore an US bikeshare system database and retrieve statistics information from the database. The user is able filter the information by city, month and weekday, in order to visualize statistics information related to a specific subset of data. The user is also able to chose to view raw data and to sort this data.
 
-
 ### Files used
-Include the files used
+- **bikeshare.py**.
+- **chicago.csv** - Dataset containing all bikeshare information for the city of Chicago provided by Udacity.
+- **new_york_city.csv** - Dataset containing all bikeshare information for the city of New York provided by Udacity.
+- **washington.csv** - Dataset containing all bikeshare information for the city of Washington provided by Udacity. Note: This does not include the 'Gender' or 'Birth Year' data.
+
+(_these **csv** files are not included in this repo but can be downloaded from the material provided in the course_) .
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
