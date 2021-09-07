@@ -301,6 +301,7 @@ def main():
             restart = input('\nAnswer: ')
             if restart.strip().lower() != 'yes':
                 break
+        #Error Handeling part of the program        
         except KeyboardInterrupt:
             print("\n You chose to Exit the Program, stopping Now... \n")
             break
