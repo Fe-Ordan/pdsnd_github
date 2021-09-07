@@ -28,8 +28,7 @@ def get_filters():
     while True:
 
         # get user input for city (chicago, new york city, washington)
-        print("\n" + tabulate({"Prompt":["Which city would you like to see Data for?"],"Possible responses":["Chicago","New york city","Washington"]},headers="keys", tablefmt="presto"))
-        city = str(input("\nShow me data for: ")).strip().lower()
+        city = promptUser("Which city would you like to see Data for?",["Chicago","New york city","Washington"])
         if city in cities_list:
             break
     # get user input for month (all, january, february, ... , june)
@@ -46,9 +45,8 @@ def get_filters():
         while True:
             print('-'*100)
             #print("if you wish to filter by month, write 'all' if you don't want to filter by any month")
-            print("\n" + tabulate({"Prompt":["Which month would you like to filter data with?"],"Possible responses":map(lambda str: str.title(),month_list)},headers="keys", tablefmt="presto"))
 
-            month = str(input("\nEnter month name: ")).strip().lower()
+            month = promptUser("Which month would you like to filter data with?",map(lambda str: str.title(),month_list))
             if (month in month_list) or (month == "all"):
                 break
 
@@ -59,9 +57,7 @@ def get_filters():
 
             print('-'*100)
             #print("Which day you want to filter data with?")
-            print("\n" + tabulate({"Prompt":["Which day would you like to filter data with?"],"Possible responses":map(lambda str: str.title(),day_list)},headers="keys", tablefmt="presto"))
-
-            day = str(input("Enter day here: ")).strip().lower()
+            day = promptUser("Which day would you like to filter data with?",map(lambda str: str.title(),day_list))
             if day in day_list:
                 break
 
@@ -135,7 +131,7 @@ def display_raw_data(DataFrame,city,filter_type):
     df_new.insert(3,'Trip Duration',DataFrame['Trip Duration'])
     df_display_idx = 0;
     while True:
-        print("\n" + tabulate({"Prompt":["Would you like to display raw data from {}?".format(city.title())],"Possible responses":["Yes","No"]},headers="keys", tablefmt="presto"))
+        user_response = promptUser("Would you like to display raw data from {}?".format(city.title()),["Yes","No"])
         user_response = str(input("\nAnswer:".format(city.title())))
 
         if user_response.strip().lower() == 'yes':
@@ -173,6 +169,19 @@ def time_stats(df):
 
     #Display the Data calculated above in a Table form
     print(tabulate([['Most Common Month is:', popular_month],["Most Frequent day of the week:",popular_dayoftheweek],["Most Frequent Start Hour:",popular_hour]], tablefmt='grid'))
+
+def promptUser(question,possibleResponses):
+    """ Prompt the user with a question and possible Responses set from function arguments
+        Args:
+         (str) - Question to ask the user
+         (list) - the list of possible answer the user can choose
+        Returns:
+            (str)- the chosen response
+    """
+
+    print("\n" + tabulate({"Prompt":[question],"Possible responses":possibleResponses},headers="keys", tablefmt="presto"))
+    response = input('\nAnswer: ').strip().lower()
+    return response
 
 
 
@@ -230,9 +239,7 @@ def user_stats(df,city,filter_type):
 
 
 
-
-    print("\n" + tabulate({"Prompt":["Would you like to check User Statistcs for {}?".format(city.title())],"Possible responses":["Yes","No"]},headers="keys", tablefmt="presto"))
-    user_response = input('\nAnswer :').strip().lower()
+    user_response = promptUser("Would you like to check User Statistcs for {}?".format(city.title()),["Yes","No"])
     if user_response == "yes":
         print('\nCalculating User Stats...\n')
         start_time = time.time()
