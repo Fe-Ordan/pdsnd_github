@@ -33,4 +33,14 @@ The program takes user input for one of the 3 cities mentioned earlier (e.g. Chi
 
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Here are some links to websites and blogposts I consulted:
+
++ [I Used the code provided here to convert duration time from seconds to Hour/minutes/Seconds](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.apply.html)
++[This code helped to check if Column exist in a DataFrame](https://stackoverflow.com/a/39371897)
++[This Python library helped me display the statistics calculated in a pretty way](https://pypi.org/project/tabulate/).
+
+Other helpful links:
++ https://www.geeksforgeeks.org/ways-to-filter-pandas-dataframe-by-column-values/
++ https://stackoverflow.com/questions/60339049/weekday-name-from-a-pandas-dataframe-date-object
+
+Also credit to [adam-p/markdown-here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) in helping in the styling of this Documentation
